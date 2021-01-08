@@ -3,10 +3,20 @@ body {
 }
 
 h1 {
-    color: lightskyblue;
+
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 3rem;
-    margin: 10rem;
+
 } 
 
+.fadeIn {
+    animation: fade ease 4s;
+    color: lightskyblue;
+    margin: 10rem;
+}
+
+@keyframes fade {
+    0% {opacity: 0; margin: 0;}
+    100% {opacity: 1; margin: 10rem;}
+}

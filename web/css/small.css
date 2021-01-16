@@ -25,12 +25,12 @@ a:link {
 }
 
 a:visited {
-    color: #00ff88;
-    text-shadow: 2px 2px black
+    color: white;
 }
 
 a:hover {
     color: lightskyblue;
+    font-size: 1.05rem;
 }
 
 a:active {

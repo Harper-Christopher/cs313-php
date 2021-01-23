@@ -2,12 +2,47 @@
 // Start the session
 session_start();
 
-if(isset($_POST['item'])) {
-$_SESSION['guitar'] = $_POST['item'];
+if(isset($_POST['guitar1'])) {
+$_SESSION['guitar1'] = $_POST['guitar1'];
 }
 
-if (isset($_POST['price'])) {
-  $_SESSION['price'] = $_POST['price'];
+if(isset($_POST['guitar2'])) {
+  $_SESSION['guitar2'] = $_POST['guitar2'];
+  }
+
+  if(isset($_POST['guitar3'])) {
+    $_SESSION['guitar3'] = $_POST['guitar3'];
+    }
+
+    if(isset($_POST['guitar4'])) {
+      $_SESSION['guitar4'] = $_POST['guitar4'];
+      }
+
+      if(isset($_POST['guitar5'])) {
+        $_SESSION['guitar5'] = $_POST['guitar5'];
+        }
+
+        if(isset($_POST['guitar6'])) {
+          $_SESSION['guitar6'] = $_POST['guitar6'];
+          }
+
+if (isset($_POST['price1'])) {
+  $_SESSION['price1'] = $_POST['price1'];
+}
+if (isset($_POST['price2'])) {
+  $_SESSION['price2'] = $_POST['price2'];
+}
+if (isset($_POST['price3'])) {
+  $_SESSION['price3'] = $_POST['price3'];
+}
+if (isset($_POST['price4'])) {
+  $_SESSION['price4'] = $_POST['price4'];
+}
+if (isset($_POST['price5'])) {
+  $_SESSION['price5'] = $_POST['price5'];
+}
+if (isset($_POST['price6'])) {
+  $_SESSION['price6'] = $_POST['price6'];
 }
 
 ?><!DOCTYPE html>
@@ -37,8 +72,8 @@ if (isset($_POST['price'])) {
       <div class="priceButton">
       <h2 class="h2Shadow">Acoustic Guitar</h2>
       <p class="price">Price: $700</p>
-      <input type="hidden" name="item" value="Acoustic Guitar">
-      <input type="hidden" name="price" value="700">
+      <input type="hidden" name="guitar1" value="Acoustic Guitar">
+      <input type="hidden" name="price1" value="700">
       <input type="submit" value="Add To Cart" class="button">
     </form>
     </div>
@@ -50,8 +85,8 @@ if (isset($_POST['price'])) {
       <div class="priceButton">
       <h2 class="h2Shadow">Electric Guitar</h2>
       <p class="price">Price: $1,200</p>
-      <input type="hidden" name="item" value="Electric Guitar">
-      <input type="hidden" name="price" value="1200">
+      <input type="hidden" name="guitar2" value="Electric Guitar">
+      <input type="hidden" name="price2" value="1200">
       <input type="submit" value="Add To Cart" class="button">
     </form>
     </div>
@@ -63,8 +98,8 @@ if (isset($_POST['price'])) {
       <div class="priceButton">
       <h2 class="h2Shadow">Fender Guitar</h2>
       <p class="price">Price: $350</p>
-      <input type="hidden" name="item" value="Fender Guitar">
-      <input type="hidden" name="price" value="350">
+      <input type="hidden" name="guitar3" value="Fender Guitar">
+      <input type="hidden" name="price3" value="350">
       <input type="submit" value="Add To Cart" class="button">
     </form>
     </div>
@@ -78,8 +113,8 @@ if (isset($_POST['price'])) {
       <div class="priceButton">
       <h2 class="h2Shadow">Acoustic-Electric Guitar</h2>
       <p class="price">Price: $400</p>
-      <input type="hidden" name="item" value="Acoustic-Electric Guitar">
-      <input type="hidden" name="price" value="400">
+      <input type="hidden" name="guitar4" value="Acoustic-Electric Guitar">
+      <input type="hidden" name="price4" value="400">
       <input type="submit" value="Add To Cart" class="button">
     </form>
     </div>
@@ -91,8 +126,8 @@ if (isset($_POST['price'])) {
       <div class="priceButton">
       <h2 class="h2Shadow">Classical Guitar</h2>
       <p class="price">Price: $250</p>
-      <input type="hidden" name="item" value="Classical Guitar">
-      <input type="hidden" name="price" value="250">
+      <input type="hidden" name="guitar5" value="Classical Guitar">
+      <input type="hidden" name="price5" value="250">
       <input type="submit" value="Add To Cart" class="button">
     </form>
     </div>
@@ -104,8 +139,8 @@ if (isset($_POST['price'])) {
       <div class="priceButton">
       <h2 class="h2Shadow">Gibson Guitar</h2>
       <p class="price">Price: $900</p>
-      <input type="hidden" name="item" value="Gibson Guitar">
-      <input type="hidden" name="price" value="900">
+      <input type="hidden" name="guitar6" value="Gibson Guitar">
+      <input type="hidden" name="price6" value="900">
       <input type="submit" value="Add To Cart" class="button">
     </form>
     </div>

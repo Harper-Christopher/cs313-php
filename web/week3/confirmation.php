@@ -43,28 +43,113 @@ if (isset($_POST['address'])) {
   <a href="browse.php">Home</a>
   </div>
 
-  <div class="flex">
-  <div class="cartView">
-  <h1>Purchased!</h1>
-  <hr>
-    <h2>Item:</h2>
-    <?php
-    if(isset($_SESSION['guitar'])) {
-    echo $_SESSION["guitar"]; 
-    }
-    else {
-    echo "<p>None</p>";
-    }
+  <?php 
+  if(isset($_SESSION['guitar1'])) {
+   echo "<div class='flex'>";
+   echo "<div class='cartView'>";
+   echo "<h1>Purchased!</h1>";
+   echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar1"]; 
+
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price1"];
+    
+    echo "</div>";
+  }
     ?>
-    <h2>Price:</h2>
+
     <?php 
-    if(isset($_SESSION['price'])) {
-     echo "<span>$</span>", $_SESSION["price"];
-    }
-    else {
-        echo "<p>N/A</p>";
-    } ?>
-  </div>
+  if(isset($_SESSION['guitar2'])) {
+   echo "<div class='flex'>";
+   echo "<div class='cartView'>";
+   echo "<h1>Purchased!</h1>";
+   echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar2"]; 
+
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price2"];
+    
+    echo "</div>";
+  }
+    ?>
+
+<?php 
+  if(isset($_SESSION['guitar3'])) {
+   echo "<div class='flex'>";
+   echo "<div class='cartView'>";
+   echo "<h1>Purchased!</h1>";
+   echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar3"]; 
+
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price3"];
+    
+    echo "</div>";
+  }
+    ?>
+
+<?php 
+  if(isset($_SESSION['guitar4'])) {
+   echo "<div class='flex'>";
+   echo "<div class='cartView'>";
+   echo "<h1>Purchased!</h1>";
+   echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar4"]; 
+
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price4"];
+    
+    echo "</div>";
+  }
+    ?>
+
+<?php 
+  if(isset($_SESSION['guitar5'])) {
+   echo "<div class='flex'>";
+   echo "<div class='cartView'>";
+   echo "<h1>Purchased!</h1>";
+   echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar5"]; 
+
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price5"];
+    
+    echo "</div>";
+  }
+    ?>
+
+<?php 
+  if(isset($_SESSION['guitar6'])) {
+   echo "<div class='flex'>";
+   echo "<div class='cartView'>";
+   echo "<h1>Purchased!</h1>";
+   echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar6"]; 
+
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price6"];
+    
+    echo "</div>";
+  }
+    ?>
 
   
   <div class="cartView">

@@ -44,13 +44,13 @@ session_start();
     <h1>Ship to address</h1>
     <hr>
     <h2>Address:</h2>
-    <input type="text" name="address" placeholder="Street address">
+    <input type="text" name="address" placeholder="Street address" required>
     <h2>City:</h2>
-    <input type="text" name="city">
+    <input type="text" name="city" required>
     <h2>State:</h2>
-    <input type="text" name="state">
+    <input type="text" name="state" required>
     <h2>ZIP Code:</h2>
-    <input type="text" name="zip"><br><br>
+    <input type="text" name="zip" required><br><br>
     <input type="submit" value="Complete Purchase" class="button">
     </form>
   </div>

@@ -24,42 +24,203 @@ session_start();
   </div>
 
   <div class="center">
-  <div class="cartView">
-    <h1>Currently in your cart</h1>
-    <hr>
-    <h2>Item:</h2>
-    <?php
-    if(isset($_SESSION['guitar'])) {
-    echo $_SESSION["guitar"]; 
-    }
-    else {
-    echo "<p>Cart Empty</p>";
-    }
-    ?>
-    <h2>Price:</h2>
-    <?php
-    if(isset($_SESSION['price'])) {
-     echo "<span>$</span>", $_SESSION["price"];
-    }
-    else {
-        echo "<p>N/A</p>";
-    }
-    ?>
+  <?php
+  if(isset($_SESSION['guitar1'])) {
+  echo "<div class='center'>";
+  echo "<div class='cartView'>";
 
-    <form action="cart.php" method="get">
-    <br><br><button type="submit" name="unset" value="true">Clear Cart</button>
-    </form>
-</div>
-  </div>
+ 
+    echo "<h1>Currently in your cart</h1>";
+    echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar1"]; 
+    
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price1"];
+    
 
-  <?php if (isset($_GET['unset'])) {
-      session_unset();
+    echo "<form action='cart.php' method='get'>";
+    echo "<br><br><button type='submit' name='unset1' value='true'>Delete Item</button>";
+    echo "</form>";
+    echo "</div>";
+    echo "</div>";
   }
   ?>
 
-  <?php echo "Session";
+<?php
+  if(isset($_SESSION['guitar2'])) {
+  echo "<div class='center'>";
+  echo "<div class='cartView'>";
+
+ 
+    echo "<h1>Currently in your cart</h1>";
+    echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar2"]; 
+    
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price2"];
+    
+
+    echo "<form action='cart.php' method='get'>";
+    echo "<br><br><button type='submit' name='unset2' value='true'>Delete Item</button>";
+    echo "</form>";
+    echo "</div>";
+    echo "</div>";
+  }
+  ?>
+
+<?php
+  if(isset($_SESSION['guitar3'])) {
+  echo "<div class='center'>";
+  echo "<div class='cartView'>";
+
+ 
+    echo "<h1>Currently in your cart</h1>";
+    echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar3"]; 
+    
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price3"];
+    
+
+    echo "<form action='cart.php' method='get'>";
+    echo "<br><br><button type='submit' name='unset3' value='true'>Delete Item</button>";
+    echo "</form>";
+    echo "</div>";
+    echo "</div>";
+  }
+  ?>
+
+<?php
+  if(isset($_SESSION['guitar4'])) {
+  echo "<div class='center'>";
+  echo "<div class='cartView'>";
+
+ 
+    echo "<h1>Currently in your cart</h1>";
+    echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar4"]; 
+    
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price4"];
+    
+
+    echo "<form action='cart.php' method='get'>";
+    echo "<br><br><button type='submit' name='unset4' value='true'>Delete Item</button>";
+    echo "</form>";
+    echo "</div>";
+    echo "</div>";
+  }
+  ?>
+
+<?php
+  if(isset($_SESSION['guitar5'])) {
+  echo "<div class='center'>";
+  echo "<div class='cartView'>";
+
+ 
+    echo "<h1>Currently in your cart</h1>";
+    echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar5"]; 
+    
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price5"];
+    
+
+    echo "<form action='cart.php' method='get'>";
+    echo "<br><br><button type='submit' name='unset5' value='true'>Delete Item</button>";
+    echo "</form>";
+    echo "</div>";
+    echo "</div>";
+  }
+
+  ?>
+
+<?php
+  if(isset($_SESSION['guitar6'])) {
+  echo "<div class='center'>";
+  echo "<div class='cartView'>";
+
+ 
+    echo "<h1>Currently in your cart</h1>";
+    echo "<hr>";
+    echo "<h2>Item:</h2>";
+    
+    echo $_SESSION["guitar6"]; 
+    
+    echo "<h2>Price:</h2>";
+    
+     echo "<span>$</span>", $_SESSION["price6"];
+    
+
+    echo "<form action='cart.php' method='get'>";
+    echo "<br><br><button type='submit' name='unset6' value='true'>Delete Item</button>";
+    echo "</form>";
+    echo "</div>";
+    echo "</div>";
+  }
+  ?>
+  </div>
+
+  <?php if (isset($_GET['unset1'])) {
+      unset($_SESSION['guitar1']);
+      unset($_SESSION['price1']);
+      header('location: cart.php');
+  }
+  ?>
+
+<?php if (isset($_GET['unset2'])) {
+      unset($_SESSION['guitar2']);
+      unset($_SESSION['price2']);
+      header('location: cart.php');
+  }
+  ?>
+
+<?php if (isset($_GET['unset3'])) {
+      unset($_SESSION['guitar3']);
+      unset($_SESSION['price3']);
+      header('location: cart.php');
+  }
+  ?>
+
+<?php if (isset($_GET['unset4'])) {
+      unset($_SESSION['guitar4']);
+      unset($_SESSION['price4']);
+      header('location: cart.php');
+  }
+  ?>
+
+<?php if (isset($_GET['unset5'])) {
+      unset($_SESSION['guitar5']);
+      unset($_SESSION['price5']);
+      header('location: cart.php');
+  }
+  ?>
+
+<?php if (isset($_GET['unset6'])) {
+      unset($_SESSION['guitar6']);
+      unset($_SESSION['price6']);
+      header('location: cart.php');
+  }
+  ?>
+
+  <!-- <?php echo "Session";
 var_dump($_SESSION); 
-?>
+?> -->
 
   </main>
 

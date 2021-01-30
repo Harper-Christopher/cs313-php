@@ -1,0 +1,22 @@
+CREATE TABLE users (
+userid int PRIMARY KEY,
+userfirstname varchar(15),
+userlastname varchar(25),
+useremail varchar(40),
+userpassword varchar(255)
+);
+
+
+CREATE TABLE orders (
+orderid int PRIMARY KEY,
+userid int REFERENCES users(userid), 
+guitarid int REFERENCES guitar,
+orderdate date
+);
+
+
+CREATE TABLE guitar (
+guitarid int PRIMARY KEY,
+guitarname text,
+price numeric
+);

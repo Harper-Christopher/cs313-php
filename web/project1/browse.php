@@ -138,7 +138,6 @@ catch (PDOException $ex)
   <a href="cart.php">View Shopping Cart</a>
   </div>
 
-  <!-- <h1><?php echo $db['guitarname'];?></h1> -->
 
   <div class="flex">
     <form action="browse.php" method="post">

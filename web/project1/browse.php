@@ -151,8 +151,8 @@ catch (PDOException $ex)
     <div class="guitarOne">
       <img src="photos/guitarOne.jpg" alt="Guitar One">
       <div class="priceButton">
-      <h2 class="h2Shadow">Acoustic Guitar</h2>
-      <p class="price">Price: $700</p>
+      <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row){echo $row['guitarname'];}?></h2>
+      <p class="price"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar1" value="Acoustic Guitar">
       <input type="hidden" name="price1" value="700">
       <input type="submit" value="Add To Cart" class="button">

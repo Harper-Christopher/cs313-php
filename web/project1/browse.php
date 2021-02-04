@@ -138,7 +138,7 @@ catch (PDOException $ex)
   <a href="cart.php">View Shopping Cart</a>
   </div>
 
-  <h1><?php foreach ($db->query('SELECT * FROM guitar') as $row)
+  <h1><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row)
 {
   echo 'user: ' . $row['guitarname'];
   echo ' password: ' . $row['price'];

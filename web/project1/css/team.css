@@ -1,0 +1,15 @@
+body {
+    color: lightskyblue;
+    background: black;
+    padding: 1rem;
+}
+
+input {
+    color:lightskyblue;
+    border-radius: .7rem;
+    color: black;
+}
+
+span.white {
+    color: white;
+}

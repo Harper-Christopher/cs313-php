@@ -53,15 +53,15 @@ try {
 
   //if we are on heroku this will be set otherwise we can check for a local connection
   //heroku takes care of all of this for us
-  if (!isset($dbUrl) || empty($dbUrl)) {
+  // if (!isset($dbUrl) || empty($dbUrl)) {
       // example localhost configuration URL with 
       // user: "my_username"
       // password: "my_password"
       // database: "my_database"
 
       // hardcoded for debugging only not for production site
-      $dbUrl = "postgres://my_username:my_password@localhost:5432/my_database";
-  }
+      // $dbUrl = "postgres://my_username:my_password@localhost:5432/my_database";
+  // }
 
   // Get the various parts of the DB Connection from the URL
   $dbopts = parse_url($dbUrl);

@@ -152,7 +152,7 @@ catch (PDOException $ex)
       <img src="photos/guitarOne.jpg" alt="Guitar One">
       <div class="priceButton">
       <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row){echo $row['guitarname'];}?></h2>
-      <p class="price"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row){echo 'Price: ' . $row['price'];}?></p>
+      <p class="price">Price: $<?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar1" value="Acoustic Guitar">
       <input type="hidden" name="price1" value="700">
       <input type="submit" value="Add To Cart" class="button">
@@ -164,8 +164,8 @@ catch (PDOException $ex)
     <div class="guitarTwo">
       <img src="photos/guitarTwo.jpg" alt="Guitar Two">
       <div class="priceButton">
-      <h2 class="h2Shadow">Electric Guitar</h2>
-      <p class="price">Price: $1,200</p>
+      <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=2') as $row){echo $row['guitarname'];}?></h2>
+      <p class="price">Price: $<?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=2') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar2" value="Electric Guitar">
       <input type="hidden" name="price2" value="1200">
       <input type="submit" value="Add To Cart" class="button">
@@ -177,8 +177,8 @@ catch (PDOException $ex)
     <div class="guitarThree">
       <img src="photos/guitarThree.jpg" alt="Guitar Three">
       <div class="priceButton">
-      <h2 class="h2Shadow">Fender Guitar</h2>
-      <p class="price">Price: $350</p>
+      <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=3') as $row){echo $row['guitarname'];}?></h2>
+      <p class="price">Price: $<?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=3') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar3" value="Fender Guitar">
       <input type="hidden" name="price3" value="350">
       <input type="submit" value="Add To Cart" class="button">
@@ -192,8 +192,8 @@ catch (PDOException $ex)
     <div class="guitarFour">
       <img src="photos/guitarFour.jpg" alt="Guitar Four">
       <div class="priceButton">
-      <h2 class="h2Shadow">Acoustic-Electric Guitar</h2>
-      <p class="price">Price: $400</p>
+      <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=4') as $row){echo $row['guitarname'];}?></h2>
+      <p class="price">Price: $<?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=4') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar4" value="Acoustic-Electric Guitar">
       <input type="hidden" name="price4" value="400">
       <input type="submit" value="Add To Cart" class="button">
@@ -205,8 +205,8 @@ catch (PDOException $ex)
     <div class="guitarFive">
       <img src="photos/guitarFive.jpg" alt="Guitar Five">
       <div class="priceButton">
-      <h2 class="h2Shadow">Classical Guitar</h2>
-      <p class="price">Price: $250</p>
+      <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=5') as $row){echo $row['guitarname'];}?></h2>
+      <p class="price">Price: $<?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=5') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar5" value="Classical Guitar">
       <input type="hidden" name="price5" value="250">
       <input type="submit" value="Add To Cart" class="button">
@@ -218,8 +218,8 @@ catch (PDOException $ex)
     <div class="guitarSix">
       <img src="photos/guitarSix.jpg" alt="Guitar Six">
       <div class="priceButton">
-      <h2 class="h2Shadow">Gibson Guitar</h2>
-      <p class="price">Price: $900</p>
+      <h2 class="h2Shadow"><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=6') as $row){echo $row['guitarname'];}?></h2>
+      <p class="price">Price: $<?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=6') as $row){echo 'Price: ' . $row['price'];}?></p>
       <input type="hidden" name="guitar6" value="Gibson Guitar">
       <input type="hidden" name="price6" value="900">
       <input type="submit" value="Add To Cart" class="button">

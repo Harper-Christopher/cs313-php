@@ -8,7 +8,7 @@
 function regUser($userfirstname, $userlastname, $useremail, $userpassword)
 {
     // Create a connection object using the phpmotors connection function
-    $db = cs341Connect();
+    $db = dbConnect();
     // The SQL statement
     $sql = 'INSERT INTO users (userfirstname, userlastname,useremail, userpassword)
         VALUES (:userfirstname, :userlastname, :useremail, :userpassword)';
@@ -36,7 +36,7 @@ function regUser($userfirstname, $userlastname, $useremail, $userpassword)
 function checkExistingEmail($useremail)
 {
     // Create a connection object using the phpmotors connection function
-    $db =  cs341Connect();
+    $db =  dbConnect();
     // SQL to get the clientEmail database, look in the clients database in the email column. 
     $sql = 'SELECT useremail FROM users WHERE useremail = :email';
     // Create the prepared statement using the phpmotors connection
@@ -61,7 +61,7 @@ function checkExistingEmail($useremail)
 // Get client data based on an email address
 function getClient($useremail)
 {
-    $db = cs341Connect();
+    $db = dbConnect();
     $sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM users WHERE useremail = :useremail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
@@ -73,7 +73,7 @@ function getClient($useremail)
 
 
    function checkExistingClient($userfirstname) {
-    $db =  cs341Connect();
+    $db =  dbConnect();
     $sql = 'SELECT userfirstname FROM users WHERE userfirstname = :userfirstname';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userfirstname', $userfirstname, PDO::PARAM_STR);

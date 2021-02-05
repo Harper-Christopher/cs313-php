@@ -95,27 +95,34 @@ if (isset($_POST['price6'])) {
 
 // return $db;
 
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
 
-  $dbOpts = parse_url($dbUrl);
 
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
 
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+
+// try
+// {
+//   $dbUrl = getenv('DATABASE_URL');
+
+//   $dbOpts = parse_url($dbUrl);
+
+//   $dbHost = $dbOpts["host"];
+//   $dbPort = $dbOpts["port"];
+//   $dbUser = $dbOpts["user"];
+//   $dbPassword = $dbOpts["pass"];
+//   $dbName = ltrim($dbOpts["path"],'/');
+
+//   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+//   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// }
+// catch (PDOException $ex)
+// {
+//   echo 'Error!: ' . $ex->getMessage();
+//   die();
+// }
+
+dbConnect();
 
 
 ?><!DOCTYPE html>
@@ -138,12 +145,7 @@ catch (PDOException $ex)
   <a href="cart.php">View Shopping Cart</a>
   </div>
 
-  <h1><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=1') as $row)
-{
-  echo 'user: ' . $row['guitarname'];
-  echo ' password: ' . $row['price'];
-  echo '<br/>';
-}?></h1>
+  <h1><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=4') as $row){echo $row['guitarname'];}?></h1>
 
 
   <div class="flex">

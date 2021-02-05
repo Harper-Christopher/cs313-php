@@ -122,7 +122,7 @@ if (isset($_POST['price6'])) {
 //   die();
 // }
 
-dbConnect();
+
 
 
 ?><!DOCTYPE html>

@@ -2,6 +2,9 @@
 // Start the session
 session_start();
 
+require_once 'connection.php';
+$db;
+
 if(isset($_POST['guitar1'])) {
 $_SESSION['guitar1'] = $_POST['guitar1'];
 }
@@ -100,27 +103,27 @@ if (isset($_POST['price6'])) {
 
 
 
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
+// try
+// {
+//   $dbUrl = getenv('DATABASE_URL');
 
-  $dbOpts = parse_url($dbUrl);
+//   $dbOpts = parse_url($dbUrl);
 
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
+//   $dbHost = $dbOpts["host"];
+//   $dbPort = $dbOpts["port"];
+//   $dbUser = $dbOpts["user"];
+//   $dbPassword = $dbOpts["pass"];
+//   $dbName = ltrim($dbOpts["path"],'/');
 
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+//   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+//   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// }
+// catch (PDOException $ex)
+// {
+//   echo 'Error!: ' . $ex->getMessage();
+//   die();
+// }
 
 
 
@@ -145,8 +148,7 @@ catch (PDOException $ex)
   <a href="cart.php">View Shopping Cart</a>
   </div>
 
-  <h1><?php foreach ($db->query('SELECT * FROM guitar WHERE guitarid=4') as $row){echo $row['guitarname'];}?></h1>
-
+  
 
   <div class="flex">
     <form action="browse.php" method="post">

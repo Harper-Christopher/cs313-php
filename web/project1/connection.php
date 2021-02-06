@@ -57,58 +57,80 @@
 
 
 
-    // function LocalMySQL() {
-    //   try {
-    //     // Set Database Credentials
-    //     $dbHost = 'localhost';
-    //     $dbName = 'XXXXXXXXXX';
-    //     $dbUser = 'iClient';
-    //     $dbPassword = 'XXXXXXXXXX';
-    //     // Tell PDO to give us exception errors for debugging in needed
-    //     $dbOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-    //     // Create the PDO connection for MySQL
-    //     $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword, $dbOptions);
-    //     return $db;
-    //   } catch(PDOException $e) {
-    //     echo 'Error connecting to DB.';
-    //     echo 'Details: '.$e; #<-------- for debugging only not for production site (remove me)
-    //     exit;
-    //   }
-    // }
-    // ​
-    // function HerokuPostgres() {
-    //   try {
-    //     // Default Heroku Postgres configuration URL
-    //     $dbUrl = getenv('DATABASE_URL');
-    //     // Get the various parts of the DB Connection from the URL
-    //     $dbopts = parse_url($dbUrl);
-    //     $dbHost = $dbopts["host"];
-    //     $dbPort = $dbopts["port"];
-    //     $dbUser = $dbopts["user"];
-    //     $dbPassword = $dbopts["pass"];
-    //     $dbName = ltrim($dbopts["path"],'/');
-    //     // Tell PDO to give us exception errors for debugging in needed
-    //     $dbOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-    //     // Create the PDO connection for PGSQL
-    //     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword, $dbOptions);
-    //     return $db;
-    //   }
-    //   catch (PDOException $e) {
-    //     echo 'Error connecting to DB.';
-    //     echo 'Details: '.$e; #<-------- for debugging only not for production site (remove me)
-    //     exit;
-    //   }
-    // }
-    // ​
-    // // Use this function to connect database
-    // function dbConnect() {
-    //   // Check for xampp folder installations using regex
-    //   if(preg_match("/C:\/xampp\/htdocs/", $_SERVER["DOCUMENT_ROOT"])) {
-    //     return LocalMySQL();
-    //   } else {
-    //     return HerokuPostgres();
-    //   }
-    // }
+   //  function LocalMySQL() {
+   //    try {
+   //      // Set Database Credentials
+   //      $dbHost = 'localhost';
+   //      $dbName = 'XXXXXXXXXX';
+   //      $dbUser = 'iClient';
+   //      $dbPassword = 'XXXXXXXXXX';
+   //      // Tell PDO to give us exception errors for debugging in needed
+   //      $dbOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+   //      // Create the PDO connection for MySQL
+   //      $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword, $dbOptions);
+   //      return $db;
+   //    } catch(PDOException $e) {
+   //      echo 'Error connecting to DB.';
+   //      echo 'Details: '.$e; #<-------- for debugging only not for production site (remove me)
+   //      exit;
+   //    }
+   //  }
+   //  ​
+   //  function HerokuPostgres() {
+   //    try {
+   //      // Default Heroku Postgres configuration URL
+   //      $dbUrl = getenv('DATABASE_URL');
+   //      // Get the various parts of the DB Connection from the URL
+   //      $dbopts = parse_url($dbUrl);
+   //      $dbHost = $dbopts["host"];
+   //      $dbPort = $dbopts["port"];
+   //      $dbUser = $dbopts["user"];
+   //      $dbPassword = $dbopts["pass"];
+   //      $dbName = ltrim($dbopts["path"],'/');
+   //      // Tell PDO to give us exception errors for debugging in needed
+   //      $dbOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+   //      // Create the PDO connection for PGSQL
+   //      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword, $dbOptions);
+   //      return $db;
+   //    }
+   //    catch (PDOException $e) {
+   //      echo 'Error connecting to DB.';
+   //      echo 'Details: '.$e; #<-------- for debugging only not for production site (remove me)
+   //      exit;
+   //    }
+   //  }
+   //  ​
+   //  // Use this function to connect database
+   //  function dbConnect() {
+   //    // Check for xampp folder installations using regex
+   //    if(preg_match("/C:\/xampp\/htdocs/", $_SERVER["DOCUMENT_ROOT"])) {
+   //      return LocalMySQL();
+   //    } else {
+   //      return HerokuPostgres();
+   //    }
+   //  }
     
+
+   try
+{
+  $dbUrl = getenv('DATABASE_URL');
+
+  $dbOpts = parse_url($dbUrl);
+
+  $dbHost = $dbOpts["host"];
+  $dbPort = $dbOpts["port"];
+  $dbUser = $dbOpts["user"];
+  $dbPassword = $dbOpts["pass"];
+  $dbName = ltrim($dbOpts["path"],'/');
+
+  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
 
 

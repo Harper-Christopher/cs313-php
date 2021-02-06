@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+
+require_once 'connection.php';
+require_once 'accounts/index.php';
+$db;
+
+?><!DOCTYPE html>
 <html lang="en-us">
 
 <head>

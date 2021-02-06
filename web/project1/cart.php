@@ -3,6 +3,9 @@
 // Start the session
 session_start();
 
+require_once 'connection.php';
+$db;
+
 ?><!DOCTYPE html>
 <html lang="en-us">
 

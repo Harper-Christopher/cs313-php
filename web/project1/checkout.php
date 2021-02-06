@@ -3,6 +3,9 @@
 // Start the session
 session_start();
 
+require_once 'connection.php';
+$db;
+
     if(isset($_POST['address'])) {
     $_SESSION['address'] = $_POST['address'];
     }

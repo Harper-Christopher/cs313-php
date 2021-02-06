@@ -13,6 +13,11 @@
 <body>
 
   <main>
+
+  <div class="cartLink">
+  <a href="browse.php">Home</a>
+  </div>
+
   <h1>Register</h1>
             
             <form action="accounts/index.php" method="post">

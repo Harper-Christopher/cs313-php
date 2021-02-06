@@ -29,7 +29,7 @@
   <div class='center'>
   <div class='cartView'>
   <h1>Login</h1>
-  <form method="post" action="/web/project1/accounts/">
+  <form method="post" action="/project1/accounts/">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
                                                                         echo "value='$clientEmail'";
@@ -41,7 +41,7 @@
 
                 <input class="form_button" type="submit" value="Sign In"><br>
                 <input type="hidden" name="action" value="Login">
-                <input type="button" onclick="location.href='/web/project1/accounts?action=registration'" value="Create a New Account"><br>
+                <input type="button" onclick="location.href='/project1/accounts?action=registration'" value="Create a New Account"><br>
             </form><br>
   </div>
   </div>  

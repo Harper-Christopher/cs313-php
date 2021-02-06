@@ -13,6 +13,8 @@
 <body>
 
   <main>
+  <div class='center'>
+  <div class='cartView'>
   <form method="post" action="/accounts/">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
@@ -26,7 +28,9 @@
                 <input class="form_button" type="submit" value="Sign In"><br>
                 <input type="hidden" name="action" value="Login">
                 <input type="button" onclick="location.href='/accounts?action=registration'" value="Create a New Account"><br>
-            </form><br>  
+            </form><br>
+  </div>
+  </div>  
   </main>
 
 </body>

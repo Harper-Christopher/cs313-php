@@ -22,7 +22,7 @@
 
   <div class='center'>
   <div class='cartView'>
-  <form method="post" action="/accounts/">
+  <form method="post" action="/accounts/index.php">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
                                                                         echo "value='$clientEmail'";

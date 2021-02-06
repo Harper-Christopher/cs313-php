@@ -18,7 +18,7 @@ switch ($action) {
         break;
 
     case 'registration':
-        include '../register.php';
+        include './register.php';
         break;
 
     case 'register':

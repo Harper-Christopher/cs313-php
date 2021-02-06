@@ -10,6 +10,9 @@ if ($action == NULL) {
 // Get the database connection file
 // Get the accounts model
 require_once '../model/accounts-model.php';
+require_once '../connection.php';
+$db;
+
 
 
 switch ($action) {

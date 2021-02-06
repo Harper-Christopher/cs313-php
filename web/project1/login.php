@@ -1,7 +1,7 @@
 <?php
 
 require_once 'connection.php';
-require_once '/accounts/';
+require_once 'accounts.php';
 $db;
 
 ?><!DOCTYPE html>

@@ -1,8 +1,8 @@
 <?php
 
-require_once 'connection.php';
-require_once 'accounts/index.php';
-$db;
+// require_once 'connection.php';
+// require_once 'accounts/index.php';
+// $db;
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -29,7 +29,7 @@ $db;
   <div class='center'>
   <div class='cartView'>
   <h1>Login</h1>
-  <form method="post" action="/accounts/index.php">
+  <form method="post" action="/accounts/">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
                                                                         echo "value='$clientEmail'";

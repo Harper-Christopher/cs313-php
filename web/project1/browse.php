@@ -146,6 +146,7 @@ if (isset($_POST['price6'])) {
 
   <div class="cartLink">
   <a href="cart.php">View Shopping Cart</a>
+  <a href="login.php">Login</a>
   </div>
 
   

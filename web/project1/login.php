@@ -1,5 +1,5 @@
 <?php
-
+require_once 'accounts.php';
 require_once 'connection.php';
 $db;
 

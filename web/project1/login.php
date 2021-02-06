@@ -27,7 +27,7 @@
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
                                                                         echo "value='$clientEmail'";
-                                                                    }  ?> required><br>
+                                                                    }  ?> required><br><br>
 
                 <label for="password">Password: *</label>
                 <span class="passwordNote">(Password must have at least 8 characters, 1 uppercase character, 1 number, and 1 special character.)</span><br>

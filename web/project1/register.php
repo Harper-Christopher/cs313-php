@@ -26,17 +26,17 @@
                 <label for="fname">First Name: *</label><br>
                 <input type="text" id="fname" name="userfirstname" <?php if (isset($userfirstname)) {
                                                                             echo "value='$userfirstname'";
-                                                                        }  ?> required><br>
+                                                                        }  ?> required><br><br>
 
                 <label for="lname">Last Name: *</label><br>
                 <input type="text" id="lname" name="userlastname" <?php if (isset($userlastname)) {
                                                                         echo "value='$userlastname'";
-                                                                    }  ?> required><br>
+                                                                    }  ?> required><br><br>
 
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="useremail" <?php if (isset($useremail)) {
                                                                         echo "value='$useremail'";
-                                                                    }  ?> required><br>
+                                                                    }  ?> required><br><br>
 
                 <label for="password">Password: *</label>
                 <span class="passwordNote">(Password must have at least 8 characters, 1 uppercase character, 1 number, and 1 special character.)</span><br>

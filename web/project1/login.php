@@ -1,8 +1,8 @@
 <?php
 
 require_once 'connection.php';
-require_once 'accounts.php';
 $db;
+require_once 'accounts.php';
 
 ?><!DOCTYPE html>
 <html lang="en-us">

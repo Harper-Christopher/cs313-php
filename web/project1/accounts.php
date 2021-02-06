@@ -10,15 +10,16 @@ if ($action == NULL) {
 // Get the database connection file
 // Get the accounts model
 require_once 'model/accounts-model.php';
+require_once 'login.php';
 
 
 switch ($action) {
     case 'login-page':
-        include '../login.php';
+        include 'login.php';
         break;
 
     case 'registration':
-        include './register.php';
+        include 'register.php';
         break;
 
     case 'register':
@@ -36,14 +37,14 @@ switch ($action) {
         // Check for existing email address in the table
         if ($existingEmail) {
             $message = '<p class="formErrorMessage">Email address entered already exists. Please use your email to login.</p>';
-            include '../login.php';
+            include 'login.php';
             exit;
         }
 
         // Check for missing data
         if (empty($userfirstname) || empty($userlastname) || empty($useremail) || empty($userpassword)) {
             $message = '<p class="formErrorMessage">Please provide information for all empty form fields.</p>';
-            include '../registration.php';
+            include 'registration.php';
             exit;
         }
 
@@ -62,7 +63,7 @@ switch ($action) {
             exit;
         } else {
             $message = "<p class='formErrorMessage'>Sorry $userfirstname, but the registration failed. Please try again.</p>";
-            include '../registration.php';
+            include 'registration.php';
             exit;
         }
         break;
@@ -76,7 +77,7 @@ switch ($action) {
         // Run basic checks, return if errors
         if (empty($useremail) || empty($passwordCheck)) {
             $message = '<p class="notice">Please provide a valid email address and password.</p>';
-            include '../login.php';
+            include 'login.php';
             exit;
         }
 
@@ -90,7 +91,7 @@ switch ($action) {
         // and return to the login view
         if (!$hashCheck) {
             $message = '<p class="notice">Please check your password and try again.</p>';
-            include '../login.php';
+            include 'login.php';
             exit;
         }
         // A valid user exists, log them in
@@ -111,18 +112,18 @@ switch ($action) {
             setcookie('firstname', '', strtotime('+1 year'), '/');
         }
 
-        include '../browse.php';
+        include 'browse.php';
         exit;
         break;
     case 'Logout':
         session_unset();
         session_destroy();
         unset($cookieFirstname);
-        header('Location: /browse/');
+        header('Location: browse.php');
         exit;
         break;
     default;
     $clientId = $_SESSION['clientData']['clientFirstname']; $_SESSION['clientData']['clientLastname'];
-        include '../browse.php';
+        include 'browse.php';
     break;
 }

@@ -1,7 +1,7 @@
 <?php
 
 require_once 'connection.php';
-require_once 'accounts.php';
+require_once 'accounts/index.php';
 $db;
 
 ?><!DOCTYPE html>
@@ -29,7 +29,7 @@ $db;
   <div class='center'>
   <div class='cartView'>
   <h1>Login</h1>
-  <form method="post" action="accounts.php">
+  <form method="post" action="/accounts/index.php">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
                                                                         echo "value='$clientEmail'";
@@ -41,7 +41,7 @@ $db;
 
                 <input class="form_button" type="submit" value="Sign In"><br>
                 <input type="hidden" name="action" value="Login">
-                <input type="button" onclick="location.href='accounts.php?action=registration'" value="Create a New Account"><br>
+                <input type="button" onclick="location.href='/accounts?action=registration'" value="Create a New Account"><br>
             </form><br>
   </div>
   </div>  

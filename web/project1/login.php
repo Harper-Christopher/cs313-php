@@ -2,7 +2,7 @@
 
 require_once 'connection.php';
 $db;
-require_once 'accounts.php';
+
 
 ?><!DOCTYPE html>
 <html lang="en-us">

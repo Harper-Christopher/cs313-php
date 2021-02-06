@@ -18,6 +18,8 @@
   <a href="browse.php">Home</a>
   </div>
 
+  <div class='center'>
+  <div class='cartView'>
   <h1>Register</h1>
             
             <form action="accounts/index.php" method="post">
@@ -43,6 +45,8 @@
                 <input id="form_button" type="submit" name="submit" value="Register"><br>
                 <input type="hidden" name="action" value="register">
             </form><br>
+  </div>
+  </div>
   </main>
 
 </body>

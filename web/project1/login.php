@@ -42,7 +42,7 @@ $db = db_connect();
 
                 <input class="form_button" type="submit" value="Sign In"><br>
                 <input type="hidden" name="action" value="Login">
-                <input type="button" onclick="location.href='/project1/accounts?action=registration'" value="Create a New Account"><br>
+                <input type="button" onclick="location.href='/project1/accounts/register.php'" value="Create a New Account"><br>
             </form><br>
   </div>
   </div>  

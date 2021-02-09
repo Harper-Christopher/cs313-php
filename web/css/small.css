@@ -121,3 +121,7 @@ main {
     animation: fade ease 4s;
     text-align: center;
 }
+
+input {
+    padding: 1rem;
+}

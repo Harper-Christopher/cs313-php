@@ -3,7 +3,7 @@
 session_start();
 
 require_once 'connection.php';
-$db;
+$db = db_connect();
 
 if(isset($_POST['guitar1'])) {
 $_SESSION['guitar1'] = $_POST['guitar1'];

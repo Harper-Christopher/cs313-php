@@ -111,8 +111,10 @@
    //  }
     
 
-   try
-{
+function db_connect() {
+   $db = NULL;
+   
+try {
   $dbUrl = getenv('DATABASE_URL');
 
   $dbOpts = parse_url($dbUrl);
@@ -131,6 +133,9 @@ catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
   die();
+}
+
+return $db;
 }
 
 

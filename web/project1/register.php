@@ -2,7 +2,7 @@
 
 require_once 'connection.php';
 require_once 'accounts/index.php';
-$db;
+$db = db_connect();
 
 ?><!DOCTYPE html>
 <html lang="en-us">

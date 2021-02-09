@@ -1,7 +1,6 @@
 <?php
 
 require_once 'connection.php';
-require_once 'accounts/index.php';
 $db = db_connect();
 
 ?><!DOCTYPE html>

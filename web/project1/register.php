@@ -13,8 +13,8 @@ $db = db_connect();
 
         $existingEmail = checkExistingEmail($useremail);
 
-//         // Hash the checked password
-//         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
+        // Hash the checked password
+        $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
 //         // Send the data to the model
 //         $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);

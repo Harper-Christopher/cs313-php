@@ -17,7 +17,16 @@ $db = db_connect();
         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
         $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
-        $registered = $regOutcome;
+        if ($regOutcome === 1) {
+          setcookie('firstname', $userfirstname, strtotime('+1 year'), '/');
+          $_SESSION['message'] = "Thanks for registering $userfirstname. Please use your email and password to login.";
+          header('Location: login.php');
+          exit;
+      } else {
+          $message = "<p class='formErrorMessage'>Sorry $userfirstname, but the registration failed. Please try again.</p>";
+          header('Location: register.php');
+          exit;
+      }
 
 //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
 function checkEmail($useremail)

@@ -16,8 +16,7 @@ $db = db_connect();
         // Hash the checked password
         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
-//         // Send the data to the model
-//         $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
+        $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
 
 //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
 function checkEmail($useremail)
@@ -59,31 +58,31 @@ function checkExistingEmail($useremail)
     }
 }
 
-// function regUser($userfirstname, $userlastname, $useremail, $userpassword)
-// {
-//     // Create a connection object using the phpmotors connection function
-//     $db = db_connect();
-//     // The SQL statement
-//     $sql = 'INSERT INTO users (userfirstname, userlastname,useremail, userpassword)
-//         VALUES (:userfirstname, :userlastname, :useremail, :userpassword)';
-//     // Create the prepared statement using the phpmotors connection
-//     $stmt = $db->prepare($sql);
-//     // The next four lines replace the placeholders in the SQL
-//     // statement with the actual values in the variables
-//     // and tells the database the type of data it is
-//     $stmt->bindValue(':userfirstname', $userfirstname, PDO::PARAM_STR);
-//     $stmt->bindValue(':userlastname', $userlastname, PDO::PARAM_STR);
-//     $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
-//     $stmt->bindValue(':userpassword', $userpassword, PDO::PARAM_STR);
-//     // Insert the data
-//     $stmt->execute();
-//     // Ask how many rows changed as a result of our insert
-//     $rowsChanged = $stmt->rowCount();
-//     // Close the database interaction
-//     $stmt->closeCursor();
-//     // Return the indication of success (rows changed)
-//     return $rowsChanged;
-// }
+function regUser($userfirstname, $userlastname, $useremail, $userpassword)
+{
+    // Create a connection object using the phpmotors connection function
+    $db = db_connect();
+    // The SQL statement
+    $sql = 'INSERT INTO users (userfirstname, userlastname,useremail, userpassword)
+        VALUES (:userfirstname, :userlastname, :useremail, :userpassword)';
+    // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    // The next four lines replace the placeholders in the SQL
+    // statement with the actual values in the variables
+    // and tells the database the type of data it is
+    $stmt->bindValue(':userfirstname', $userfirstname, PDO::PARAM_STR);
+    $stmt->bindValue(':userlastname', $userlastname, PDO::PARAM_STR);
+    $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
+    $stmt->bindValue(':userpassword', $userpassword, PDO::PARAM_STR);
+    // Insert the data
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+}
 
 ?><!DOCTYPE html>
 <html lang="en-us">

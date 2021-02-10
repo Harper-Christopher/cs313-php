@@ -8,50 +8,38 @@ $useremail = checkEmail($useremail);
 $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 $passwordCheck = checkPassword($userpassword);
 
-// Run basic checks, return if errors
-if (empty($useremail) || empty($passwordCheck)) {
-    $message = '<p class="notice">Please provide a valid email address and password.</p>';
-    header("Location: login.php");
-    exit;
+
+// A valid password exists, proceed with the login process
+// Query the client data based on the email address
+$clientData = getClient($useremail);
+// Compare the password just submitted against
+// the hashed password for the matching client
+$hashCheck = password_verify($userpassword, $clientData['userpassword']);
+
+// A valid user exists, log them in
+$_SESSION['loggedin'] = TRUE;
+// Remove the password from the array
+// the array_pop function removes the last
+// element from an array
+array_pop($clientData);
+// Store the array into the session
+$_SESSION['clientData'] = $clientData;
+
+// Place clients first name in variable clientFirstname when logging in
+$userfirstname = $_SESSION['clientData']['userfirstname'];
+
+// Get client data based on an email address
+function getClient($useremail)
+{
+    $db = db_connect();
+    $sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM users WHERE useremail = :useremail';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
+    $stmt->execute();
+    $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $clientData;
 }
-
-// // A valid password exists, proceed with the login process
-// // Query the client data based on the email address
-// $clientData = getClient($useremail);
-// // Compare the password just submitted against
-// // the hashed password for the matching client
-// $hashCheck = password_verify($userpassword, $clientData['userpassword']);
-// // If the hashes don't match create an error
-// // and return to the login view
-// if (!$hashCheck) {
-//     $message = '<p class="notice">Please check your password and try again.</p>';
-//     include 'login.php';
-//     exit;
-// }
-// // A valid user exists, log them in
-// $_SESSION['loggedin'] = TRUE;
-// // Remove the password from the array
-// // the array_pop function removes the last
-// // element from an array
-// array_pop($clientData);
-// // Store the array into the session
-// $_SESSION['clientData'] = $clientData;
-
-// // Place clients first name in variable clientFirstname when logging in
-// $userfirstname = $_SESSION['clientData']['userfirstname'];
-
-// // Get client data based on an email address
-// function getClient($useremail)
-// {
-//     $db = db_connect();
-//     $sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM users WHERE useremail = :useremail';
-//     $stmt = $db->prepare($sql);
-//     $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
-//     $stmt->execute();
-//     $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $stmt->closeCursor();
-//     return $clientData;
-// }
 
    //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
    function checkEmail($useremail)

@@ -8,12 +8,12 @@ $useremail = checkEmail($useremail);
 $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 $passwordCheck = checkPassword($userpassword);
 
-// // Run basic checks, return if errors
-// if (empty($useremail) || empty($passwordCheck)) {
-//     $message = '<p class="notice">Please provide a valid email address and password.</p>';
-//     include 'login.php';
-//     exit;
-// }
+// Run basic checks, return if errors
+if (empty($useremail) || empty($passwordCheck)) {
+    $message = '<p class="notice">Please provide a valid email address and password.</p>';
+    include 'login.php';
+    exit;
+}
 
 // // A valid password exists, proceed with the login process
 // // Query the client data based on the email address

@@ -9,9 +9,9 @@ $db = db_connect();
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 
         $useremail = checkEmail($useremail);
-        $checkassword = checkPassword($userpassword);
+        // $checkassword = checkPassword($userpassword);
 
-        $existingEmail = checkExistingEmail($useremail);
+        // $existingEmail = checkExistingEmail($useremail);
 
 //         // Hash the checked password
 //         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
@@ -19,12 +19,12 @@ $db = db_connect();
 //         // Send the data to the model
 //         $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
 
-// //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
-// function checkEmail($useremail)
-// {
-//    $valEmail = filter_var($useremail, FILTER_VALIDATE_EMAIL);
-//    return $valEmail;
-// }
+//Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
+function checkEmail($useremail)
+{
+   $valEmail = filter_var($useremail, FILTER_VALIDATE_EMAIL);
+   return $valEmail;
+}
 
 // // Check the password for a minimum of 8 characters,
 // // at least one 1 capital letter, at least 1 number and

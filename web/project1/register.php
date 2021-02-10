@@ -11,7 +11,7 @@ $db = db_connect();
         $useremail = checkEmail($useremail);
         $checkassword = checkPassword($userpassword);
 
-        // $existingEmail = checkExistingEmail($useremail);
+        $existingEmail = checkExistingEmail($useremail);
 
 //         // Hash the checked password
 //         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
@@ -35,29 +35,29 @@ function checkPassword($userpassword)
    return preg_match($pattern, $userpassword);
 }
 
-// function checkExistingEmail($useremail)
-// {
-//     // Create a connection object using the phpmotors connection function
-//     $db =  db_connect();
-//     // SQL to get the clientEmail database, look in the clients database in the email column. 
-//     $sql = 'SELECT useremail FROM users WHERE useremail = :email';
-//     // Create the prepared statement using the phpmotors connection
-//     $stmt = $db->prepare($sql);
-//     // Replace the placeholders in the SQL statement with the actual values in the variables and tells the database the type of data it is.
-//     $stmt->bindValue(':email', $useremail, PDO::PARAM_STR);
-//     // Insert the data
-//     $stmt->execute();
-//     // fetching a single row using fetch, using FETCH_NUM to get a simple numeric array. 
-//     $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
-//     // Close the database interaction
-//     $stmt->closeCursor();
-//     //If $matchEmail is empty return 0, if the array is not empty return 1.
-//     if (empty($matchEmail)) {
-//         return 0;
-//     } else {
-//         return 1;
-//     }
-// }
+function checkExistingEmail($useremail)
+{
+    // Create a connection object using the phpmotors connection function
+    $db =  db_connect();
+    // SQL to get the clientEmail database, look in the clients database in the email column. 
+    $sql = 'SELECT useremail FROM users WHERE useremail = :email';
+    // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    // Replace the placeholders in the SQL statement with the actual values in the variables and tells the database the type of data it is.
+    $stmt->bindValue(':email', $useremail, PDO::PARAM_STR);
+    // Insert the data
+    $stmt->execute();
+    // fetching a single row using fetch, using FETCH_NUM to get a simple numeric array. 
+    $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
+    // Close the database interaction
+    $stmt->closeCursor();
+    //If $matchEmail is empty return 0, if the array is not empty return 1.
+    if (empty($matchEmail)) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
 
 // function regUser($userfirstname, $userlastname, $useremail, $userpassword)
 // {

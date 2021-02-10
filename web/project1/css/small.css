@@ -77,3 +77,7 @@ input {
 input {
     padding: .4rem;
 }
+
+.form_button {
+    background-color: lightskyblue;
+}

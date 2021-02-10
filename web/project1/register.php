@@ -128,7 +128,7 @@ function regUser($userfirstname, $userlastname, $useremail, $userpassword)
                 <span class="passwordNote">(Password must have at least 8 characters, 1 uppercase character, 1 number, and 1 special character.)</span><br>
                 <input type="password" id="password" name="userpassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br><br>
 
-                <input id="form_button" type="submit" name="submit" value="Register"><br>
+                <input class="form_button" type="submit" name="submit" value="Register"><br>
                 <input type="hidden" name="action" value="register">
             </form><br>
   </div>

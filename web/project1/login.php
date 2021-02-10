@@ -3,10 +3,10 @@
 require_once 'connection.php';
 $db = db_connect();
 
-// $useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL);
-// $useremail = checkEmail($useremail);
-// $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
-// $passwordCheck = checkPassword($userpassword);
+$useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL);
+$useremail = checkEmail($useremail);
+$userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
+$passwordCheck = checkPassword($userpassword);
 
 // // Run basic checks, return if errors
 // if (empty($useremail) || empty($passwordCheck)) {
@@ -53,21 +53,21 @@ $db = db_connect();
 //     return $clientData;
 // }
 
-//    //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
-//    function checkEmail($useremail)
-//    {
-//       $valEmail = filter_var($useremail, FILTER_VALIDATE_EMAIL);
-//       return $valEmail;
-//    }
+   //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
+   function checkEmail($useremail)
+   {
+      $valEmail = filter_var($useremail, FILTER_VALIDATE_EMAIL);
+      return $valEmail;
+   }
    
-//    // Check the password for a minimum of 8 characters,
-//    // at least one 1 capital letter, at least 1 number and
-//    // at least 1 special character
-//    function checkPassword($userpassword)
-//    {
-//       $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
-//       return preg_match($pattern, $userpassword);
-//    }
+   // Check the password for a minimum of 8 characters,
+   // at least one 1 capital letter, at least 1 number and
+   // at least 1 special character
+   function checkPassword($userpassword)
+   {
+      $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
+      return preg_match($pattern, $userpassword);
+   }
 
 ?><!DOCTYPE html>
 <html lang="en-us">

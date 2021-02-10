@@ -8,10 +8,10 @@ $db = db_connect();
         $useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL);
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 
-//         $useremail = checkEmail($useremail);
-//         $checkassword = checkPassword($userpassword);
+        $useremail = checkEmail($useremail);
+        $checkassword = checkPassword($userpassword);
 
-//         $existingEmail = checkExistingEmail($useremail);
+        $existingEmail = checkExistingEmail($useremail);
 
 //         // Hash the checked password
 //         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);

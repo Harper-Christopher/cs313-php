@@ -16,7 +16,8 @@ $db = db_connect();
         // Hash the checked password
         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
-        // $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
+        $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
+        $registered = $regOutcome;
 
 //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
 function checkEmail($useremail)

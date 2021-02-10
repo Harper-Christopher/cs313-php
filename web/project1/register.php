@@ -108,7 +108,7 @@ function regUser($userfirstname, $userlastname, $useremail, $userpassword)
   <div class='cartView'>
   <h1>Register</h1>
             
-            <form action="accounts/index.php" method="post">
+            <form action="login.php" method="post">
                 <label for="fname">First Name: *</label><br>
                 <input type="text" id="fname" name="userfirstname" <?php if (isset($userfirstname)) {
                                                                             echo "value='$userfirstname'";

@@ -16,7 +16,7 @@ $db = db_connect();
         // Hash the checked password
         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
-        $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
+        // $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
         if ($regOutcome === 1) {
           setcookie('firstname', $userfirstname, strtotime('+1 year'), '/');
           $_SESSION['message'] = "Thanks for registering $userfirstname. Please use your email and password to login.";

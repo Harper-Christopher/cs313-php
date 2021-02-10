@@ -9,7 +9,7 @@ $db = db_connect();
         $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
 
         $useremail = checkEmail($useremail);
-        // $checkassword = checkPassword($userpassword);
+        $checkassword = checkPassword($userpassword);
 
         // $existingEmail = checkExistingEmail($useremail);
 
@@ -26,14 +26,14 @@ function checkEmail($useremail)
    return $valEmail;
 }
 
-// // Check the password for a minimum of 8 characters,
-// // at least one 1 capital letter, at least 1 number and
-// // at least 1 special character
-// function checkPassword($userpassword)
-// {
-//    $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
-//    return preg_match($pattern, $userpassword);
-// }
+// Check the password for a minimum of 8 characters,
+// at least one 1 capital letter, at least 1 number and
+// at least 1 special character
+function checkPassword($userpassword)
+{
+   $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
+   return preg_match($pattern, $userpassword);
+}
 
 // function checkExistingEmail($useremail)
 // {

@@ -77,3 +77,7 @@ input {
 input {
     padding: .6rem;
 }
+
+.notice {
+    color: red;
+}

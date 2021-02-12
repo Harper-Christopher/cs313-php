@@ -128,7 +128,6 @@ $db = db_connect();
                 <input type="password" id="password" name="userpassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br><br>
 
                 <input class="form_button" type="submit" name="submit" value="Register"><br>
-                <input type="hidden" name="action" value="register">
             </form><br>
   </div>
   </div>

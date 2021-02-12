@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// $action = filter_input(INPUT_GET, 'action');
-// if ($action == NULL) {
-//     $action = filter_input(INPUT_POST, 'action');
-// }
+$action = filter_input(INPUT_GET, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_POST, 'action');
+}
 
 
 // Get the database connection file
@@ -118,6 +118,6 @@ switch ($action) {
         break;
     default;
     $clientId = $_SESSION['clientData']['clientFirstname']; $_SESSION['clientData']['clientLastname'];
-        include 'checkout.php';
+        include 'browse.php';
     break;
 }

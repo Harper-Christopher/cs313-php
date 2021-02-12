@@ -11,17 +11,10 @@ if ($action == NULL) {
 // Get the accounts model
 require_once 'model/accounts-model.php';
 require_once 'connection.php';
-$db;
+$db = db_connect();
 
 
 switch ($action) {
-    case 'login-page':
-        include 'login.php';
-        break;
-
-    case 'registration':
-        include 'register.php';
-        break;
 
     case 'register':
         // Filter and store the data
@@ -35,19 +28,19 @@ switch ($action) {
 
         $existingEmail = checkExistingEmail($useremail);
 
-        // Check for existing email address in the table
-        if ($existingEmail) {
-            $message = '<p class="formErrorMessage">Email address entered already exists. Please use your email to login.</p>';
-            include 'login.php';
-            exit;
-        }
+        // // Check for existing email address in the table
+        // if ($existingEmail) {
+        //     $message = '<p class="formErrorMessage">Email address entered already exists. Please use your email to login.</p>';
+        //     include 'login.php';
+        //     exit;
+        // }
 
-        // Check for missing data
-        if (empty($userfirstname) || empty($userlastname) || empty($useremail) || empty($userpassword)) {
-            $message = '<p class="formErrorMessage">Please provide information for all empty form fields.</p>';
-            include 'registration.php';
-            exit;
-        }
+        // // Check for missing data
+        // if (empty($userfirstname) || empty($userlastname) || empty($useremail) || empty($userpassword)) {
+        //     $message = '<p class="formErrorMessage">Please provide information for all empty form fields.</p>';
+        //     include 'registration.php';
+        //     exit;
+        // }
 
 
         // Hash the checked password
@@ -60,11 +53,11 @@ switch ($action) {
         if ($regOutcome === 1) {
             setcookie('firstname', $userfirstname, strtotime('+1 year'), '/');
             $_SESSION['message'] = "Thanks for registering $userfirstname. Please use your email and password to login.";
-            header('Location: /accounts/?action=Login');
+            header('Location: login.php');
             exit;
         } else {
             $message = "<p class='formErrorMessage'>Sorry $userfirstname, but the registration failed. Please try again.</p>";
-            include 'registration.php';
+            include 'register.php';
             exit;
         }
         break;

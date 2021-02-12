@@ -104,6 +104,8 @@ function getClient($useremail)
   echo $userlastname; 
   echo $useremail;
   echo $userpassword;
+  echo $userfirstname;
+  echo $userlastname; 
   ?>  
   </main>
 

@@ -10,10 +10,10 @@ $passwordCheck = checkPassword($userpassword);
 
 
 // A valid password exists, proceed with the login process
-// Query the client data based on the email address
+// Query the user data based on the email address
 $clientData = getClient($useremail);
 // Compare the password just submitted against
-// the hashed password for the matching client
+// the hashed password for the matching user
 $hashCheck = password_verify($userpassword, $clientData['userpassword']);
 
 // A valid user exists, log them in
@@ -28,7 +28,7 @@ $_SESSION['clientData'] = $clientData;
 // Place clients first name in variable clientFirstname when logging in
 $userfirstname = $_SESSION['clientData']['userfirstname'];
 
-// Get client data based on an email address
+// Get user data based on an email address
 function getClient($useremail)
 {
     $db = db_connect();
@@ -98,7 +98,13 @@ function getClient($useremail)
                 <input type="button" onclick="location.href='/project1/register.php'" value="Create a New Account"><br>
             </form><br>
   </div>
-  </div>  
+  </div>
+  <?php 
+  echo $userfirstname;
+  echo $userlastname; 
+  echo $useremail;
+  echo $userpassword;
+  ?>  
   </main>
 
 </body>

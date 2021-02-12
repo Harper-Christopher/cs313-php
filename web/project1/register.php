@@ -37,11 +37,11 @@ function checkPassword($userpassword)
 
 function checkExistingEmail($useremail)
 {
-    // Create a connection object using the phpmotors connection function
+    // Create a connection object using the connection function
     $db =  db_connect();
-    // SQL to get the clientEmail database, look in the clients database in the email column. 
+    // SQL to get the userEmail database, look in the users database in the email column. 
     $sql = 'SELECT useremail FROM users WHERE useremail = :email';
-    // Create the prepared statement using the phpmotors connection
+    // Create the prepared statement using the connection
     $stmt = $db->prepare($sql);
     // Replace the placeholders in the SQL statement with the actual values in the variables and tells the database the type of data it is.
     $stmt->bindValue(':email', $useremail, PDO::PARAM_STR);
@@ -61,16 +61,14 @@ function checkExistingEmail($useremail)
 
 function regUser($userfirstname, $userlastname, $useremail, $userpassword)
 {
-    // Create a connection object using the phpmotors connection function
+    // Create a connection object using the connection function
     $db = db_connect();
     // The SQL statement
     $sql = 'INSERT INTO users (userfirstname, userlastname,useremail, userpassword)
         VALUES (:userfirstname, :userlastname, :useremail, :userpassword)';
-    // Create the prepared statement using the phpmotors connection
+    // Create the prepared statement using the connection
     $stmt = $db->prepare($sql);
-    // The next four lines replace the placeholders in the SQL
-    // statement with the actual values in the variables
-    // and tells the database the type of data it is
+    // The next four lines replace the placeholders in the SQL statement with the actual values in the variables and tells the database the type of data it is
     $stmt->bindValue(':userfirstname', $userfirstname, PDO::PARAM_STR);
     $stmt->bindValue(':userlastname', $userlastname, PDO::PARAM_STR);
     $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);

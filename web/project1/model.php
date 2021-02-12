@@ -10,7 +10,7 @@ function regUser($userfirstname, $userlastname, $useremail, $userpassword)
     // Create a connection object using the phpmotors connection function
     $db = db_connect();
     // The SQL statement
-    $sql = 'INSERT INTO users (userfirstname, userlastname,useremail, userpassword)
+    $sql = 'INSERT INTO users (userfirstname, userlastname, useremail, userpassword)
         VALUES (:userfirstname, :userlastname, :useremail, :userpassword)';
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);

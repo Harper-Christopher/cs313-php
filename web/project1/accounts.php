@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-$action = filter_input(INPUT_GET, 'action');
-if ($action == NULL) {
-    $action = filter_input(INPUT_POST, 'action');
-}
+// $action = filter_input(INPUT_GET, 'action');
+// if ($action == NULL) {
+//     $action = filter_input(INPUT_POST, 'action');
+// }
 
 
 // Get the database connection file
 // Get the accounts model
-require_once 'model/accounts-model.php';
+require_once 'model.php';
 require_once 'connection.php';
 $db = db_connect();
 
@@ -47,7 +47,7 @@ switch ($action) {
         $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
         // Send the data to the model
-        // $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
+        $regOutcome = regUser($userfirstname, $userlastname, $useremail, $hashedPassword);
 
         // Check and report the result
         if ($regOutcome === 1) {

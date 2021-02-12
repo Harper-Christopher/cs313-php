@@ -100,8 +100,8 @@ function getClient($useremail)
   </div>
   </div>
   <?php 
-  echo $userfirstname;
-  echo $userlastname; 
+  echo $_POST['userfirstname'];
+  echo $_POST['userlastname']; 
   echo $useremail;
   echo $userpassword;
   echo $userfirstname;

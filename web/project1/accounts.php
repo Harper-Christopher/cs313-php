@@ -118,6 +118,6 @@ switch ($action) {
         break;
     default;
     $clientId = $_SESSION['clientData']['clientFirstname']; $_SESSION['clientData']['clientLastname'];
-        include 'browse.php';
+        include 'checkout.php';
     break;
 }

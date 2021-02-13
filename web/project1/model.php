@@ -56,23 +56,7 @@ function getUser($useremail)
 }
 
 
-   function checkExistingClient($userfirstname) {
-    $db =  db_connect();
-    $sql = 'SELECT userfirstname FROM users WHERE userfirstname = :userfirstname';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':userfirstname', $userfirstname, PDO::PARAM_STR);
-    $stmt->execute();
-    $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
-    $stmt->closeCursor();
-    if(empty($matchEmail)){
-     return 0;
-    } else {
-     return 1;
-    }
-   }
-
-
-   //Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
+//Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
 function checkEmail($useremail)
 {
    $valEmail = filter_var($useremail, FILTER_VALIDATE_EMAIL);

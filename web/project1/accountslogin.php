@@ -17,7 +17,7 @@
         }
 
         // A valid password exists, proceed with the login process, Query the client data based on the email address
-        $userData = getClient($useremail);
+        $userData = getUser($useremail);
         // Compare the password just submitted against the hashed password for the matching client
         $hashCheck = password_verify($userpassword, $userData['userpassword']);
         // If the hashes don't match create an error and return to the login view

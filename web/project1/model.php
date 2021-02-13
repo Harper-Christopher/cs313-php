@@ -43,16 +43,16 @@ function checkExistingEmail($useremail)
 
 
 // Get user data based on an email address
-function getClient($useremail)
+function getUser($useremail)
 {
     $db = db_connect();
     $sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM users WHERE useremail = :useremail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
     $stmt->execute();
-    $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    return $clientData;
+    return $userData;
 }
 
 

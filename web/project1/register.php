@@ -106,6 +106,8 @@ $db = db_connect();
   <div class='center'>
   <div class='cartView'>
   <h1>Register</h1>
+
+  <?php $message ?><br>
             
             <form action="accounts.php" method="post">
                 <label for="fname">First Name: *</label><br>

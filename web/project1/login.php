@@ -82,7 +82,7 @@ function getClient($useremail)
   <div class='center'>
   <div class='cartView'>
   <h1>Login</h1>
-  <p><?php $message; ?></p>
+  <p><?php $message; ?></p><br>
   <form method="post" action="browse.php">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {

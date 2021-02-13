@@ -1,5 +1,5 @@
 CREATE TABLE users (
-userid int PRIMARY KEY,
+userid serial PRIMARY KEY,
 userfirstname varchar(15),
 userlastname varchar(25),
 useremail varchar(40),
@@ -8,7 +8,7 @@ userpassword varchar(255)
 
 
 CREATE TABLE orders (
-orderid int PRIMARY KEY,
+orderid serial PRIMARY KEY,
 userid int REFERENCES users(userid), 
 guitarid int REFERENCES guitar,
 orderdate date

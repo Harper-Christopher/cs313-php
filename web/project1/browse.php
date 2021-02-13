@@ -144,6 +144,13 @@ if (isset($_POST['price6'])) {
 
   <main>
 
+  <?php 
+    $sessionfirstname = $_SESSION['userData']['userfirstname'];
+    $sessionlastname = $_SESSION['userData']['userlastname'];
+if (isset($_SESSION['userData']['userfirstname'])) {
+    echo "<h2>Welcome $sessionfirstname $sessionlastname</h2>";
+} ?> 
+
   <div class="cartLink">
   <a href="cart.php">View Shopping Cart</a>
   <a href="login.php">Login</a>

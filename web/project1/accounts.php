@@ -50,9 +50,8 @@ $useremail = checkEmail($useremail);
 
         // Check and report the result
         if ($regOutcome === 1) {
-            setcookie('firstname', $userfirstname, strtotime('+1 year'), '/');
-            $_SESSION['message'] = "Thanks for registering $userfirstname. Please use your email and password to login.";
-            header('Location: login.php');
+            $message = "<p class='formErrorMessage'>Thanks for registering $userfirstname. Please use your email and password to login.</p>";
+            include 'login.php';
             exit;
         } else {
             $message = "<p class='formErrorMessage'>Sorry $userfirstname, but the registration failed. Please try again.</p>";

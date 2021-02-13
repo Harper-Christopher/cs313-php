@@ -81,3 +81,7 @@ input {
 .form_button {
     background-color: lightskyblue;
 }
+
+.formErrorMessage {
+    color: red;
+}

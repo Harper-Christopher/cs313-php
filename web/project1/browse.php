@@ -146,6 +146,7 @@ if (isset($_POST['price6'])) {
 
   <div class="cartLink">
   <p><?php 
+     echo $useremail;
      echo $_SESSION['userData']['userfirstname'];
      echo $_SESSION['userData']['userlastname'];
 // if (isset($_SESSION['userData']['userfirstname'])) {

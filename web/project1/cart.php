@@ -22,6 +22,7 @@ $db;
   <main>
 
   <div class="cartLink">
+  <a href="browse.php">Home</a>
   <a href="browse.php">Continue Shopping</a>
   <a href="checkout.php">Checkout Now</a>
   </div>

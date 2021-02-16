@@ -39,6 +39,7 @@ $db;
   <main>
 
   <div class="cartLink">
+  <a href="browse.php">Home</a>
   <a href="cart.php">Return to Cart</a>
   </div>
 

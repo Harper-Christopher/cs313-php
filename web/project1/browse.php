@@ -145,13 +145,12 @@ if (isset($_POST['price6'])) {
   <main>
 
   <div class="cartLink">
-  <p><?php 
-     echo $useremail;
+  <p>Welcome<?php 
      echo $_SESSION['userData']['userfirstname'];
      echo $_SESSION['userData']['userlastname'];
 // if (isset($_SESSION['userData']['userfirstname'])) {
 //     echo "<h2>Welcome $sessionfirstname $sessionlastname</h2>";
- ?></p> 
+ ?>!</p> 
   <a href="cart.php">View Shopping Cart</a>
   <a href="login.php">Login</a>
   </div>

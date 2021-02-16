@@ -163,7 +163,10 @@ if (isset($_POST['price6'])) {
 }
 ?>
 <a href="cart.php">View Shopping Cart</a>
-  <!-- <a href="login.php">Login</a> -->
+<?php if (isset($_SESSION['loggedin'])) {
+  echo '<a href="orderhistory.php" title="Order History">Order History</a>';
+}
+?>
   </div>
 
   

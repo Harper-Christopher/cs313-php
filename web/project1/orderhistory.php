@@ -6,6 +6,12 @@ session_start();
 require_once 'connection.php';
 $db = db_connect();
 
+if (!isset($_GET['userfirstname'])){
+    die("User name undefined.");
+}
+
+$userfirstname = htmlspecialchars($_GET['userfirstname']);
+
 ?><!DOCTYPE html>
 <html lang="en-us">
 
@@ -26,7 +32,7 @@ $db = db_connect();
   </div>
 
   <div class="cartView">
-  <h1>Order History:</h1>
+  <h1>Order History for <?php echo $userfirstname ?>:</h1>
   </div>
   </main>
 

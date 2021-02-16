@@ -156,7 +156,7 @@ if (isset($_POST['price6'])) {
   <?php if (isset($_SESSION['loggedin'])) {
     $sessionfirstname = $_SESSION['userData']['userfirstname'];
     $sessionlastname = $_SESSION['userData']['userlastname'];
-    echo "<h2>Welcome $sessionfirstname '' $sessionlastname!</h2>";
+    echo "<h1>Welcome $sessionfirstname  $sessionlastname!</h1>";
     echo '<a href="logout.php" title="Log out">Log Out</a>';
 } else {
     echo '<a href="login.php" title="Login">Login</a>';

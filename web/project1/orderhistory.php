@@ -26,7 +26,7 @@ $db = db_connect();
   </div>
 
   <div class="cartView">
-  
+  <h1>Order History:</h1>
   </div>
   </main>
 

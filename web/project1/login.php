@@ -85,13 +85,13 @@ function getClient($useremail)
   <p><?php $message; ?></p><br>
   <form method="post" action="browse.php">
                 <label for="email">Email: *</label><br>
-                <input type="email" id="email" name="clientEmail" <?php if (isset($clientEmail)) {
-                                                                        echo "value='$clientEmail'";
+                <input type="email" id="email" name="useremail" <?php if (isset($useremail)) {
+                                                                        echo "value='$useremail'";
                                                                     }  ?> required><br><br>
 
                 <label for="password">Password: *</label>
                 <span class="passwordNote">(Password must have at least 8 characters, 1 uppercase character, 1 number, and 1 special character.)</span><br>
-                <input type="password" id="password" name="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
+                <input type="password" id="password" name="userpassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 
                 <input class="form_button" type="submit" value="Sign In"><br>
                 <input type="hidden" name="action" value="Login">

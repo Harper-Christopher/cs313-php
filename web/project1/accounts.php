@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $userfirstname = htmlspecialchars($_POST['userfirstname']);
 $userlastname = htmlspecialchars($_POST['userlastname']);
 $useremail = htmlspecialchars($_POST['useremail']);

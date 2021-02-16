@@ -4,9 +4,9 @@
         require_once 'connection.php';
         $db = db_connect();
 
-        $useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL);
+        $useremail = htmlspecialchars($_POST['useremail']);
         $useremail = checkEmail($useremail);
-        $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_STRING);
+        $userpassword = htmlspecialchars($_POST['userpassword']);
         $passwordCheck = checkPassword($userpassword);
 
         // Run basic checks, return if errors

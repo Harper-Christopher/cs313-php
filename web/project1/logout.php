@@ -2,7 +2,8 @@
 
 session_unset();
 session_destroy();
-header('Location: browse.php');
+include 'browse.php';
+exit;
 
 ?>
 

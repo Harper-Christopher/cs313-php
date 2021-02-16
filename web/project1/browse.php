@@ -152,16 +152,17 @@ if (isset($_POST['price6'])) {
 //     echo "<h2>Welcome $sessionfirstname '' $sessionlastname</h2>";
 // }
  ?>
-  <a href="cart.php">View Shopping Cart</a>
+  
   <?php if (isset($_SESSION['loggedin'])) {
     $sessionfirstname = $_SESSION['userData']['userfirstname'];
     $sessionlastname = $_SESSION['userData']['userlastname'];
-    echo "<h2>Welcome $sessionFirstname '' $sessionlastname!</h2>";
+    echo "<h2>Welcome $sessionfirstname '' $sessionlastname!</h2>";
     echo '<a href="logout.php" title="Log out">Log Out</a>';
 } else {
     echo '<a href="login.php" title="Login">Login</a>';
 }
 ?>
+<a href="cart.php">View Shopping Cart</a>
   <!-- <a href="login.php">Login</a> -->
   </div>
 

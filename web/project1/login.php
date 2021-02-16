@@ -29,7 +29,7 @@ $db = db_connect();
   <div class='cartView'>
   <h1>Login</h1>
   <p><?php $message; ?></p><br>
-  <form method="post" action="browse.php">
+  <form method="post" action="accountslogin.php">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="useremail" <?php if (isset($useremail)) {
                                                                         echo "value='$useremail'";

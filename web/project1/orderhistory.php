@@ -12,7 +12,6 @@ if (!isset($_GET['userfirstname'])){
 
 $userfirstname = htmlspecialchars($_GET['userfirstname']);
 $userlastname = htmlspecialchars($_GET['userlastname']);
-$useremail = htmlspecialchars($_GET['useremail']);
 $userid = htmlspecialchars($_GET['userid']);
 
 $sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM users WHERE useremail = :useremail';

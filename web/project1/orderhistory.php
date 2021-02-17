@@ -12,6 +12,7 @@ if (!isset($_GET['userfirstname'])){
 
 $userfirstname = htmlspecialchars($_GET['userfirstname']);
 $userlastname = htmlspecialchars($_GET['userlastname']);
+$useremail = htmlspecialchars($_GET['useremail']);
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -33,7 +34,7 @@ $userlastname = htmlspecialchars($_GET['userlastname']);
   </div>
 
   <div class="cartView">
-  <h1>Order History for <?php echo $userfirstname . $userlastname ?>:</h1>
+  <h1>Order History for <?php echo $userfirstname . $userlastname . $useremail?>:</h1>
   </div>
   </main>
 

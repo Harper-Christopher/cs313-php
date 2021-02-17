@@ -35,6 +35,7 @@
         // Place users first name in variable userfirstname when logging in
         $userfirstname = $_SESSION['userData']['userfirstname'];
         $userlastname = $_SESSION['userData']['userlastname'];
+        $useremail = $_SESSION['userData']['useremail'];
 
         include 'browse.php';
         exit;

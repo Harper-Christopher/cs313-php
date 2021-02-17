@@ -2,7 +2,7 @@
 
 session_unset();
 session_destroy();
-include 'browse.php';
+include 'checkout.php';
 exit;
 
 ?>

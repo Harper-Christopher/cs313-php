@@ -24,7 +24,7 @@ $db = db_connect();
 // header("Location: $page");
 // die();
 
-$useremail = checkEmail($useremail);
+        $useremail = checkEmail($useremail);
         $checkassword = checkPassword($userpassword);
 
         $existingEmail = checkExistingEmail($useremail);

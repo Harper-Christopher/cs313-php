@@ -16,9 +16,9 @@
             exit;
         }
 
-        // A valid password exists, proceed with the login process, Query the client data based on the email address
+        // A valid password exists, proceed with the login process, Query the user data based on the email address
         $userData = getUser($useremail);
-        // Compare the password just submitted against the hashed password for the matching client
+        // Compare the password just submitted against the hashed password for the matching user
         $hashCheck = password_verify($userpassword, $userData['userpassword']);
         // If the hashes don't match create an error and return to the login view
         if (!$hashCheck) {
@@ -32,7 +32,7 @@
         array_pop($userData);
         // Store the array into the session
         $_SESSION['userData'] = $userData;
-        // Place clients first name in variable clientFirstname when logging in
+        // Place users first name in variable userfirstname when logging in
         $userfirstname = $_SESSION['userData']['userfirstname'];
         $userlastname = $_SESSION['userData']['userlastname'];
 

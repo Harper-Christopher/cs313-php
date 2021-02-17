@@ -36,6 +36,7 @@
         $userfirstname = $_SESSION['userData']['userfirstname'];
         $userlastname = $_SESSION['userData']['userlastname'];
         $useremail = $_SESSION['userData']['useremail'];
+        $userid = $_SESSION['userData']['userid'];
 
         include 'browse.php';
         exit;

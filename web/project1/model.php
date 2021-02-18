@@ -72,9 +72,10 @@ function checkPassword($userpassword)
 
 
 function orderHistory($userid) {
-    
+
     $db = db_connect();
-    $sql = 'SELECT guitar.guitarname, guitar.price FROM guitar INNER JOIN orders ON guitar.guitarid=orders.guitarid WHERE orders.userid = :userid';
+    // $sql = 'SELECT guitar.guitarname, guitar.price FROM guitar INNER JOIN orders ON guitar.guitarid=orders.guitarid WHERE orders.userid = :userid';
+    $sql = 'SELECT * FROM users WHERE userid = :userid';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
     $stmt->execute();

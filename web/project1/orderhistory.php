@@ -39,7 +39,7 @@ $userid = htmlspecialchars($_GET['userid']);
   </div>
 
   <div class="cartView">
-  <h1>Order History for <?php echo $userfirstname . $userlastname ?>:</h1>
+  <h1>Order History for <?php echo $userfirstname ?>:</h1>
   <hr>
   <h2>Item:</h2>
   

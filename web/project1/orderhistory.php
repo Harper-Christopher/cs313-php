@@ -40,11 +40,9 @@ $userOrders = orderHistory($userid);
   <h1>Order History for <?php echo $userfirstname . $userlastname . $userid ?>:</h1>
   <hr>
   <h2>Item:</h2>
-  <?php
-   echo $userOrders['guitar.guitarname']
-  ?> 
+  
     <h2>Price:</h2>
-    <span>$</span> <?php echo $userOrders['guitar.price'] ?>
+    <span>$</span> 
     
   </div>
   </main>

@@ -44,10 +44,10 @@ $userOrders = $stmt->fetch(PDO::FETCH_ASSOC);
   <hr>
   <h2>Item:</h2>
   <?php
-   echo ['userOrders']['guitar.guitarname']
+   echo $userOrders['guitar.guitarname']
   ?> 
     <h2>Price:</h2>
-    <span>$</span> <?php echo ['userOrders']['guitar.price'] ?>
+    <span>$</span> <?php echo $userOrders['guitar.price'] ?>
     
   </div>
   </main>

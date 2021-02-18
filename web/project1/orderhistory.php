@@ -15,7 +15,7 @@ $userfirstname = htmlspecialchars($_GET['userfirstname']);
 $userlastname = htmlspecialchars($_GET['userlastname']);
 $userid = htmlspecialchars($_GET['userid']);
 
-// $userOrders = orderHistory($userid);
+$userOrders = orderHistory($userid);
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -37,7 +37,7 @@ $userid = htmlspecialchars($_GET['userid']);
   </div>
 
   <div class="cartView">
-  <h1>Order History for <?php echo $userfirstname . $userlastname . $userid ?>:</h1>
+  <h1>Order History for <?php echo $userfirstname . $userlastname ?>:</h1>
   <hr>
   <h2>Item:</h2>
   

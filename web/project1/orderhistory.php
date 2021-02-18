@@ -15,7 +15,7 @@ $userfirstname = htmlspecialchars($_GET['userfirstname']);
 $userlastname = htmlspecialchars($_GET['userlastname']);
 $userid = htmlspecialchars($_GET['userid']);
 
-$userOrders = orderHistory($userid);
+// $userOrders = orderHistory($userid);
 
 ?><!DOCTYPE html>
 <html lang="en-us">

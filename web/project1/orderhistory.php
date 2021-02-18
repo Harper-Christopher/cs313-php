@@ -3,6 +3,7 @@
 // Start the session
 session_start();
 
+require_once 'model.php';
 require_once 'connection.php';
 $db = db_connect();
 
@@ -14,11 +15,7 @@ $userfirstname = htmlspecialchars($_GET['userfirstname']);
 $userlastname = htmlspecialchars($_GET['userlastname']);
 $userid = htmlspecialchars($_GET['userid']);
 
-$sql = 'SELECT guitar.guitarname, guitar.price FROM guitar INNER JOIN orders ON guitar.guitarid=orders.guitarid WHERE orders.userid = :userid';
-$stmt = $db->prepare($sql);
-$stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
-$stmt->execute();
-$userOrders = $stmt->fetch(PDO::FETCH_ASSOC);
+$userOrders = orderHistory($userid);
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -42,12 +39,12 @@ $userOrders = $stmt->fetch(PDO::FETCH_ASSOC);
   <div class="cartView">
   <h1>Order History for <?php echo $userfirstname . $userlastname . $userid ?>:</h1>
   <hr>
-  <!-- <h2>Item:</h2>
+  <h2>Item:</h2>
   <?php
    echo $userOrders['guitar.guitarname']
   ?> 
     <h2>Price:</h2>
-    <span>$</span> <?php echo $userOrders['guitar.price'] ?> -->
+    <span>$</span> <?php echo $userOrders['guitar.price'] ?>
     
   </div>
   </main>

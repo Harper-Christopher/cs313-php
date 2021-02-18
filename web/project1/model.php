@@ -69,3 +69,14 @@ function checkPassword($userpassword)
    $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
    return preg_match($pattern, $userpassword);
 }
+
+
+function orderHistory($userid) {
+    $db = db_connect();
+    $sql = 'SELECT guitar.guitarname, guitar.price FROM guitar INNER JOIN orders ON guitar.guitarid=orders.guitarid WHERE orders.userid = :userid';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+    $stmt->execute();
+    $userOrders = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $userOrders;
+}

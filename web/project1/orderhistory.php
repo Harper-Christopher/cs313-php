@@ -14,11 +14,14 @@ $userfirstname = htmlspecialchars($_GET['userfirstname']);
 $userlastname = htmlspecialchars($_GET['userlastname']);
 $userid = htmlspecialchars($_GET['userid']);
 
-$sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM users WHERE useremail = :useremail';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
-    $stmt->execute();
-    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+$sql = 'SELECT guitar.guitarname, guitar.price
+FROM guitar
+INNER JOIN orders ON guitar.guitarid=orders.guitarid
+WHERE userid = :userid';
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':userid', $userid, PDO::PARAM_STR);
+$stmt->execute();
+$userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -41,6 +44,14 @@ $sql = 'SELECT userid, userfirstname, userlastname, useremail, userpassword FROM
 
   <div class="cartView">
   <h1>Order History for <?php echo $userfirstname . $userlastname . $userid ?>:</h1>
+  <hr>
+  <h2>Item:</h2>
+  <?php
+   echo ['userData']['guitar.guitarname']
+  ?> 
+    <h2>Price:</h2>
+    <span>$</span> <?php echo ['userData']['guitar.price'] ?>
+    
   </div>
   </main>
 

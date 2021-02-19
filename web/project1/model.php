@@ -56,7 +56,7 @@ function getUser($useremail)
 }
 
 
-//Function to check the value of the $useremail variable, after having been sanitized, to see if it "looks" like a valid email address.
+//Function to check the value of the $useremail variable to see if it "looks" like a valid email address.
 function checkEmail($useremail)
 {
    $valEmail = filter_var($useremail, FILTER_VALIDATE_EMAIL);

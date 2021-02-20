@@ -39,7 +39,7 @@ $userid = htmlspecialchars($_GET['userid']);
   <?php $_SESSION['message'] ?>
   <h1>Update user password for <?php echo $userfirstname . $userlastname ?>:</h1>
   <hr>
-  <h2>Item:</h2>
+  <h2>Update Password:</h2>
   <form method="POST" action="accountsupdate.php">
    <label for="password">Update Password: *</label>
                 <span class="passwordNote">(Password must have at least 8 characters, 1 uppercase character, 1 number, and 1 special character.)</span><br>

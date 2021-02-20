@@ -88,7 +88,7 @@ function passwordUpdate($hashedPassword, $userid){
     $sql = 'UPDATE users SET userpassword = :hashedPassword WHERE userid=:userid ';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
-    $stmt->bindValue(':userid', $userid, PDO::PARAM_STR);
+    $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
      // Insert the data
      $stmt->execute();
      // Ask how many rows changed as a result of our insert

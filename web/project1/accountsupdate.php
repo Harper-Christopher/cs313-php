@@ -2,7 +2,7 @@
 
 session_start();
 
-$userid = htmlspecialchars($_GET['userid']);
+$userid = htmlspecialchars($_POST['userid']);
 $userpassword = htmlspecialchars($_POST['userpassword']);
 
 require_once 'model.php';
@@ -26,3 +26,5 @@ if($passwordOutcome === 1){
     include 'userupdate.php';
     exit;
  }
+
+ ?>

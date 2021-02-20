@@ -14,8 +14,8 @@ $db = db_connect();
 $deleteOutcome = deleteUser($userid);
 // Check and report the result
 if($deleteOutcome === 1){
-    $_SESSION['message'] = "Congratulations, user $userfirstname $userlastname has been deleted.";
-    include 'browse.php';
+    $_SESSION['message'] = "Congratulations, user $userfirstname $userlastname has been deleted."; 
+    header('browse.php');
     exit;
  } else {
     $_SESSION['message'] = "Sorry $userfirstname $userlastname, failed to delete. Please try again.";

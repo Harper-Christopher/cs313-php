@@ -82,3 +82,19 @@ function orderHistory($userid) {
     $stmt->closeCursor();
     return $userOrders;
 }
+
+function passwordUpdate($hashedPassword, $userid){
+    $db = db_connect();
+    $sql = 'UPDATE users SET userpassword = :hashedPassword WHERE userid=:userid ';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
+    $stmt->bindValue(':userid', $userid, PDO::PARAM_STR);
+     // Insert the data
+     $stmt->execute();
+     // Ask how many rows changed as a result of our insert
+     $rowsChanged = $stmt->rowCount();
+     // Close the database interaction
+     $stmt->closeCursor();
+     // Return the indication of success (rows changed)
+     return $rowsChanged;
+   }

@@ -167,6 +167,10 @@ if (isset($_POST['price6'])) {
   echo "<a href='orderhistory.php?userfirstname=$sessionfirstname&userlastname=$sessionlastname&userid=$userid' title='Order History'>Order History</a>";
 }
 ?>
+<?php if (isset($_SESSION['loggedin'])) {
+  echo "<a href='userupdate.php?userfirstname=$sessionfirstname&userlastname=$sessionlastname&userid=$userid' title='Update User'>Update User</a>";
+}
+?>
   </div>
 
   

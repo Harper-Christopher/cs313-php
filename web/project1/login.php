@@ -28,7 +28,7 @@ $db = db_connect();
   <div class='center'>
   <div class='cartView'>
   <h1>Login</h1>
-  <p class="formErrorMessage"><?php $message; ?></p><br>
+  <p class="formErrorMessage"><?php $message; $_SESSION['message'] ?></p><br>
   <form method="post" action="accountslogin.php">
                 <label for="email">Email: *</label><br>
                 <input type="email" id="email" name="useremail" <?php if (isset($useremail)) {

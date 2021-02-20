@@ -49,6 +49,15 @@ $userid = htmlspecialchars($_GET['userid']);
    </form>
     
   </div>
+
+  <div class="cartView">
+    <h1>Delete User:</h1>
+    <hr>
+    <?php if (isset($_SESSION['loggedin'])) {
+  echo "<a href='deleteUser.php?userfirstname=$sessionfirstname&userlastname=$sessionlastname&userid=$userid' title='Delete User'>Delete User</a>";
+}
+?>
+  </div>
   </main>
 
 </body>

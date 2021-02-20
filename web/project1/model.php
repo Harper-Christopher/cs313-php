@@ -98,3 +98,18 @@ function passwordUpdate($hashedPassword, $userid){
      // Return the indication of success (rows changed)
      return $rowsChanged;
    }
+
+   function deleteUser($userid){
+    $db = db_connect();
+    $sql = 'DELETE FROM users WHERE userid=:userid ';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+     // Insert the data
+     $stmt->execute();
+     // Ask how many rows changed as a result of our insert
+     $rowsChanged = $stmt->rowCount();
+     // Close the database interaction
+     $stmt->closeCursor();
+     // Return the indication of success (rows changed)
+     return $rowsChanged;
+   }

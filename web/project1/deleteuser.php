@@ -2,9 +2,9 @@
 
 session_start();
 
-$userid = htmlspecialchars($_POST['userid']);
-$userfirstname = htmlspecialchars($_POST['userfirstname']);
-$userlastname = htmlspecialchars($_POST['userlastname']);
+$userid = htmlspecialchars($_GET['userid']);
+$userfirstname = htmlspecialchars($_GET['userfirstname']);
+$userlastname = htmlspecialchars($_GET['userlastname']);
 
 require_once 'model.php';
 require_once 'connection.php';

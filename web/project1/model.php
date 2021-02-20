@@ -101,7 +101,7 @@ function passwordUpdate($hashedPassword, $userid){
 
    function deleteUser($userid){
     $db = db_connect();
-    $sql = 'DELETE FROM users WHERE userid=:userid ';
+    $sql = 'DELETE FROM users WHERE userid = :userid ';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
      // Insert the data

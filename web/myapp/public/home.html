@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Postal Rate Calculator</title>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+
+    <div class="center">
+      <div class="box">
+      <h1>Welcome to the Postal Rate Calculator!</h1>
+      </div>
+      <div class="box">  
+      <form action="getRate" method="POST">
+      <h2>Please enter your postage information:</h2>
+        <span>Mail type:</span> 
+        <br><select name="mailType" required>
+          <option value="">Select...</option>
+          <option value="stamped"> Letters (Stamped)</option>
+          <option value="metered"> Letters (Metered)</option>
+          <option value="flats"> Large Envelopes (Flats)</option>
+          <option value="retail"> First-Class Package Service - Retail</option>
+        </select> <br><br>
+        <span>Weight in onces:</span>
+        <br><input type="text" pattern="\d+(\.\d{1,2})?" name="weight" id="weight" required><br><br>
+        <input id="button" type="submit" value="Submit">
+      </form>
+      </div>
+    </div>
+
+</body>
+
+</html>

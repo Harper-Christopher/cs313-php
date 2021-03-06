@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 5005;
 
 app.use(express.static("public"));
 
@@ -24,8 +25,8 @@ app.post("/getRate", function(req, res) {
   res.render("getRate", params);
 });
 
-app.listen(5005, function() {
-  console.log("The server is up and listening on port 5000");
+app.listen(port, function() {
+  console.log("The server is up and listening on port 5005");
 });
 
 //------View------//
